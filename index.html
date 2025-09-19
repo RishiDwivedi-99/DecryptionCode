@@ -153,7 +153,69 @@
             color: rgba(255,255,255,0.3);
             font-size: 1rem;
         }
+        /* Responsive */
+@media (max-width: 768px) {
+    body {
+        /* Use a column flex layout instead of padding for better stacking */
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 15px; /* Add some padding around the edges */
+        /* Ensure the full height is usable on mobile browsers */
+        height: 100vh;
+        max-height: -webkit-fill-available;
+    }
 
+    .header {
+        /* Remove absolute positioning to put it in the normal document flow */
+        position: relative; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin-bottom: 15px; /* Add space between header and terminal */
+    }
+
+    .main-title {
+        font-size: 1.5rem;
+    }
+    
+    .sub-title {
+        font-size: 1rem;
+    }
+
+    .terminal-container {
+        /* Allow the terminal to fill the remaining vertical space */
+        flex-grow: 1; 
+        width: 100%;
+        height: auto; /* Let flexbox control the height */
+        min-height: 250px; /* Ensure it doesn't get too small */
+        font-size: 1rem;
+    }
+
+    #terminal-input {
+        font-size: 1rem;
+    }
+    
+    .cursor {
+        height: 1rem;
+    }
+
+    .hint {
+        /* Reposition hint to flow naturally at the bottom */
+        position: relative;
+        width: 100%;
+        text-align: center;
+        bottom: 0;
+        right: 0;
+        margin-top: 10px;
+        padding-bottom: 5px;
+        font-size: 0.9rem;
+    }
+    
+    .rad-symbol {
+        /* Hide the large symbol on small screens to reduce clutter */
+        display: none;
+    }
+}
         /* Responsive */
         @media (max-width: 768px) {
             .header { flex-direction: column; align-items: flex-start; }
